@@ -5,13 +5,13 @@ import { Form, Card, Image, Icon } from 'semantic-ui-react';
 
 function App() {
   const [name, setName] = useState('');
-  const [userName, setUserName] = useState('');
+
   const [followers, setFollowers] = useState('');
   const [following, setFollowing] = useState('');
   const [repos, setRepos] = useState('');
   const [avatar, setAvatar] = useState('');
   const [userInput, setUserInput] = useState('');
-  const[error, setError] = useState('null');
+  const[error, setError] = useState('');
 
   useEffect(() => {
     fetch("https://api.github.com/users/example")
@@ -23,7 +23,7 @@ function App() {
 
   const setData = ({ name, login, followers, following, public_repos, avatar_url}) => {
       setName(name);
-      setUserName(login);
+     
       setFollowers(followers);
       setFollowing(following);
       setRepos(public_repos);
@@ -43,7 +43,7 @@ function App() {
         }
         else{
           setData(data);
-          setError(null);
+          
         }
         
       })
@@ -56,11 +56,11 @@ return(
         <Form onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Input placeholder='Github user' name='github user' onChange={handleSearch}/>
-            <Form.Button content='Submit' />
+            <Form.Button content='Search' />
           </Form.Group>
         </Form>
       </div>
-    {error ? (<h1>{error}</h1>) : 
+    {error ? (<h1>{error}</h1>) :
     (
       <div className='card'>
         <Card>
