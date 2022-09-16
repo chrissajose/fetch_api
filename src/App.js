@@ -71,21 +71,21 @@ return(
             </Card.Content>
 
             <Card.Content extra>
-              <a>
+              <a href="/">
               <Icon name='user' />
               {followers} Followers
               </a>
             </Card.Content>
 
             <Card.Content extra>
-              <a>
+              <a href="/">
               <Icon name='user' />
               {repos} Repos
               </a>
             </Card.Content>
 
             <Card.Content extra>
-              <a>
+              <a href="/">
               <Icon name='user' />
               {following} Following
               </a>
